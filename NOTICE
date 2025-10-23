@@ -1,0 +1,26 @@
+Third-Party Notices and Attributions
+
+This project is built on the PyTorch ecosystem and uses TorchVision video
+models as its backbone. In particular, the following pretrained weights
+were used during training/evaluation:
+
+  - tvv.R3D_18_Weights.KINETICS400_V1  (TorchVision)
+
+Third-party components:
+  - PyTorch — Copyright (c) Facebook, Inc. and its affiliates.
+    Licensed under the BSD 3-Clause License.
+
+  - TorchVision — Copyright (c) PyTorch Vision Team.
+    Licensed under the BSD 3-Clause License.
+
+Backbone reference:
+  - TorchVision r3d_18 (3D ResNet-18) with weights:
+    tvv.R3D_18_Weights.KINETICS400_V1
+
+Notes:
+  - Source code of this repository is licensed under BSD-3-Clause (see LICENSE).
+  - Model weights under 'weights/' are licensed under CC BY 4.0 (see weights/LICENSE).
+  - If you redistribute binaries, models, or derivatives, please retain this NOTICE.
+
+SPDX-FileNotice: This file provides attribution and license notices for
+                 third-party components used by this project.

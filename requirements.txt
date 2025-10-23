@@ -1,0 +1,43 @@
+# Core scientific stack
+numpy==2.0.1
+pandas==2.3.2
+scipy==1.15.3
+
+# Utils
+pyyaml==6.0.2
+tqdm==4.67.1
+pyzmq==27.0.2
+requests==2.32.4
+
+# I/O, plotting
+plotly==6.3.0
+imageio==2.37.0
+imageio-ffmpeg==0.6.0
+pillow==11.1.0
+opencv-python==4.12.0.88
+
+# Model zoo / weights utils (프로젝트 코드에서 사용)
+timm==1.0.19
+safetensors==0.6.2
+huggingface-hub==0.34.4
+torchsummary==1.5.1
+
+# OpenGL / Pygame / GLM (Plotly는 상단 공통에 포함되어 있음)
+PyOpenGL==3.1.10
+pygame==2.6.1
+pyglm==2.8.2
+
+# glfw를 쓰는 브랜치가 있다면 활성화
+glfw==2.7.0
+# PyOpenGL-accelerate  # 가속 모듈(휠 있는 환경에서만 권장)
+
+# IMPORTANT: 이 파일은 pip로 설치할 때만 사용.
+# CUDA 12.1 전용 인덱스에서 설치
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+
+# Optional CUDA interop (코드 가드되어 있으면 필요 없음)
+cupy-cuda12x  # 사용 시에만 수동 선택 설치 권장
