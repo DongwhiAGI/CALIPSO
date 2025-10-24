@@ -9,14 +9,7 @@ This project uses sensor-captured measurements and trains models that predict th
 ### 1) Train
 
 Train on the provided simplified demo dataset.
-Training on the full dataset took **9 h 13 m** , and the resulting checkpoint is saved at:
-
-```
-outputs/checkpoints/square_best_model.pth and
-outputs/checkpoints/spiral_best_model.pth
-```
-
-This checkpoint is used for inference.
+Training on the full dataset took **9 h 13 m**.
 
 **Via helper script**
 
@@ -33,6 +26,12 @@ python -m src.train --config configs\demo\train_demo.yaml
 ---
 
 ### 2) Inference
+To run inference, download the model weights and place them in the following locations:
+[weights/demo/square_best_model.pth](https://drive.google.com/file/d/1XfM1lmFcbUCYHlOziO7Q2I-RP12W9xKO/view?usp=sharing)
+[weights/demo/square_latest_checkpoint.pth](https://drive.google.com/file/d/1gCFLf2ma1rY_ml23FtEea5_7hC0Le9Pm/view?usp=sharing)
+[weights/demo/spiral_best_model.pth](https://drive.google.com/file/d/16NqLbcNsFKA3PIDxgHCKJ3tAvXc8AR8q/view?usp=sharing)
+[weights/demo/spiral_latest_checkpoint.pth](https://drive.google.com/file/d/1--ChMC9DQTb8IRszbacig7cgbp54K10A/view?usp=sharing)
+
 
 Load the pretrained weights (from the full dataset) and run inference on the prepared evaluation data.
 Results are saved as `.csv`.
