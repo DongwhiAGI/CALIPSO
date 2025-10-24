@@ -52,10 +52,10 @@ input_spec:
 
 inference:
   stride: 1
-  confidence_thresh: 0.9
-  min_stable_count: 7
+  confidence_thresh: 0.8
+  min_stable_count: 5
   smoothing_window: 200
-  max_distance_threshold: 3.5
+  max_distance_threshold: 5
 
 net:
   server_ip: "0.0.0.0"

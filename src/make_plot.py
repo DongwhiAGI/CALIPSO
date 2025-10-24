@@ -11,7 +11,7 @@ import plotly.io as pio
 # 데이터 전처리/로딩 유틸 (infer.py와 동일한 경로 가정)
 from src.data.transforms import (
     preprocess_static_data,
-    preprocess_dynamic_data_inference,
+    #preprocess_dynamic_data_inference,
 )
 from src.utils.data_utils import (
     load_inference_data,

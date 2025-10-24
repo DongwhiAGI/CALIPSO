@@ -9,10 +9,11 @@ This project uses sensor-captured measurements and trains models that predict th
 ### 1) Train
 
 Train on the provided simplified demo dataset.
-Training on the full dataset took **00 h 00 m** (placeholder), and the resulting checkpoint is saved at:
+Training on the full dataset took **9 h 13 m** , and the resulting checkpoint is saved at:
 
 ```
-outputs/checkpoints/best_model.pth
+outputs/checkpoints/square_best_model.pth and
+outputs/checkpoints/spiral_best_model.pth
 ```
 
 This checkpoint is used for inference.
@@ -38,7 +39,7 @@ Results are saved as `.csv`.
 
 Per-dataset runtimes and commands:
 
-* **square** (0 min 0 s)
+* **square** (2 s)
 
   * **Via helper script**
 
@@ -51,7 +52,7 @@ Per-dataset runtimes and commands:
     python -m src.infer --config configs\demo\infer_square_demo.yaml --mode batch
     ```
 
-* **spiral** (0 min 0 s)
+* **spiral** (6 s)
 
   * **Via helper script**
 
@@ -70,43 +71,43 @@ Per-dataset runtimes and commands:
 
 Visualize predictions.
 
-* **After inference, render and save a final plot**
+* **After inference, render and save a final plot**(square: 25 s, spiral: 1 m 40 s)
 
   * **Via helper script**
 
     ```bash
-    scripts/run_make_plot --config configs/demo/square_visualize.yaml --style final --draw-every 1 --out outputs/square_plotly.html
+    scripts/run_make_plot --config configs/demo/square_visualize_demo.yaml --style final --draw-every 1 --out outputs/square_plotly.html
     ```
   * **Direct Python invocation**
 
     ```bash
-    python -m src.make_plot --config configs\demo\square_visualize.yaml --style final --draw-every 1 --out outputs\square_plotly.html
+    python -m src.make_plot --config configs\demo\square_visualize_demo.yaml --style final --draw-every 1 --out outputs\square_plotly.html
     ```
 
-* **Incremental plotting while inference progresses**
+* **Incremental plotting while inference progresses**(If the Plotly figure does not appear in your environment, run this in a Jupyter environment instead.)
 
   * **Via helper script**
 
     ```bash
-    scripts/run_make_plot --config configs/demo/square_visualize.yaml --style incremental --draw-every 1
+    scripts/run_make_plot --config configs/demo/square_visualize_demo.yaml --style incremental --draw-every 1
     ```
   * **Direct Python invocation**
 
     ```bash
-    python -m src.make_plot --config configs\demo\square_visualize.yaml --style incremental --draw-every 1
+    python -m src.make_plot --config configs\demo\square_visualize_demo.yaml --style incremental --draw-every 1
     ```
 
-* **Incremental plotting with interactive OpenGL**
+* **Incremental plotting with interactive OpenGL**(square: 35 s, spiral: 2 m 20 s)
 
   * **Via helper script**
 
     ```bash
-    scripts/run_make_plot --config configs/demo/square_visualize.yaml --style incremental_opengl --draw-every 1
+    scripts/run_make_plot --config configs/demo/square_visualize_demo.yaml --style incremental_opengl --draw-every 1
     ```
   * **Direct Python invocation**
 
     ```bash
-    python -m src.make_plot --config configs\demo\square_visualize.yaml --style incremental_opengl --draw-every 1
+    python -m src.make_plot --config configs\demo\square_visualize_demo.yaml --style incremental_opengl --draw-every 1
     ```
 
 ---
@@ -114,17 +115,18 @@ Visualize predictions.
 ### 4) Video
 
 Generate a video from the visualization.
-As inference runs, results are rendered via OpenGL; after completion, they are encoded into a video file.
+As inference runs, results are rendered via OpenGL; after completion, they are encoded into a video file.(square: 1 m 35 s, spiral: 6 m 10 s)
+
 
 * **Via helper script**
 
   ```bash
-  scripts/run_make_video --config configs/demo/square_visualize.yaml --fps 240 --draw-every 1 --out outputs/square_opengl.mp4
+  scripts/run_make_video --config configs/demo/square_visualize_demo.yaml --fps 240 --draw-every 1 --out outputs/square_opengl.mp4
   ```
 * **Direct Python invocation**
 
   ```bash
-  python -m src.make_video --config configs\demo\square_visualize.yaml --fps 240 --draw-every 1 --out outputs\square_opengl.mp4
+  python -m src.make_video --config configs\demo\square_visualize_demo.yaml --fps 240 --draw-every 1 --out outputs\square_opengl.mp4
   ```
 
 ---
@@ -136,17 +138,10 @@ Print model details.
 * **Via helper script**
 
   ```bash
-  scripts/run_model_info --config configs/demo/infer_demo.yaml
+  scripts/run_model_info --config configs/demo/infer_square_demo.yaml
   ```
 * **Direct Python invocation**
 
   ```bash
-  python -m src.tools.print_model_info --config configs\demo\infer_demo.yaml
+  python -m src.tools.print_model_info --config configs\demo\infer_square_demo.yaml
   ```
-
----
-
-> **Notes**
->
-> * Replace placeholder times (e.g., **00 h 00 m**) with actual measurements once available.
-> * Paths in examples show both Unix-style and Windows-style separators where relevant; use whichever matches your environment.

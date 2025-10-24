@@ -8,7 +8,7 @@ import torch
 import yaml
 
 from src.inference.infer_loop import infer_stream, infer_batch
-from src.data.transforms import preprocess_static_data, preprocess_dynamic_data_inference
+from src.data.transforms import preprocess_static_data#, preprocess_dynamic_data_inference
 from src.utils.data_utils import load_inference_data, load_dynamic_data_inference
 from src.utils.seed import set_seed
 
