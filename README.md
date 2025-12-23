@@ -1,5 +1,5 @@
 # CALIPSO: Compound Array of Lensless In-sensor Processing for Seeking Objects
-Code and data for a **Nature Electronics** submission.
+
 This project uses sensor-captured measurements and trains models that predict the 3D position of a light source from those data, with tools for visualization.
 
 ---
